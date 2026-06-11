@@ -1,6 +1,35 @@
-vim.pack.add({
-	"https://github.com/saghen/blink.lib",
-	{ src = "https://github.com/saghen/blink.pairs", version = vim.version.range("*") },
-})
+return {
+  'saghen/blink.pairs',
+  dependencies = 'saghen/blink.lib',
 
-require("blink.pairs").setup({})
+  version = '*',
+  build = function() require('blink.pairs').build():pwait(60000) end,
+
+  opts = {
+    mappings = {
+      enabled = true,
+      cmdline = true,
+      disabled_filetypes = {},
+      wrap = {
+        ['<C-b>'] = 'motion',
+        ['<C-S-b>'] = 'motion_reverse',
+      },
+      pairs = {},
+    },
+    highlights = {
+      enabled = true,
+      cmdline = true,
+      groups = { 'BlinkPairsOrange', 'BlinkPairsPurple', 'BlinkPairsBlue' },
+      unmatched_group = 'BlinkPairsUnmatched',
+
+      matchparen = {
+        enabled = true,
+        cmdline = false,
+        include_surrounding = false,
+        group = 'BlinkPairsMatchParen',
+        priority = 250,
+      },
+    },
+    debug = false,
+  }
+}
