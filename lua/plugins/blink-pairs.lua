@@ -1,9 +1,7 @@
 return {
   'saghen/blink.pairs',
-  dependencies = 'saghen/blink.lib',
-
-  version = '*',
-  build = function() require('blink.pairs').build():pwait(60000) end,
+  dependencies = 'saghen/blink.download',
+  version = 'v0.5.0',
 
   opts = {
     mappings = {

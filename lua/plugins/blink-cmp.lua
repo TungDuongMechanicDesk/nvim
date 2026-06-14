@@ -12,7 +12,10 @@ return {
       "saghen/blink.lib",
       "L3MON4D3/LuaSnip",
     },
-    version = "*",
+    version = '1.*',
+    -- build = function()
+    --   require('blink.cmp').build():pwait()
+    -- end,
     opts = {
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
