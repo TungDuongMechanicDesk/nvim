@@ -18,6 +18,6 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  install = { colorscheme = { "solarized-osaka" } },
+  install = { colorscheme = { "solarized" } },
   checker = { enabled = true },
 })

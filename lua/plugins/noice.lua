@@ -30,8 +30,9 @@ return {
   {
 		"rcarriga/nvim-notify",
 		config = function()
+      local colors = require("config.colors").palette
 			require("notify").setup({
-				background_colour = "#00000000",
+				background_colour = colors.base3,
 				max_width = 50,
 				render = "wrapped-default",
 				timeout = 1000,

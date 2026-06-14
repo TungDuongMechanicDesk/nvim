@@ -7,13 +7,14 @@ return {
         theme = "solarized",
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
+        globalstatus = true,
         disabled_filetypes = {},
       },
       sections = {
         lualine_a = {
           {
             "mode",
-            icon = "",
+            icon = "",
           },
         },
         lualine_b = { "branch" },
@@ -29,10 +30,10 @@ return {
             "diagnostics",
             sources = { "nvim_diagnostic" },
             symbols = {
-              error = " ",
-              warn = " ",
-              info = " ",
-              hint = " ",
+              error = " ",
+              warn = " ",
+              info = " ",
+              hint = " ",
             },
           },
           {
@@ -51,24 +52,16 @@ return {
           },
           "filetype",
         },
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
-      },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {
-          {
-            "filename",
-            file_status = true,
-            path = 1,
-          },
+        lualine_y = {
+          { "progress", separator = "", padding = { left = 1, right = 0 } },
+          { "location", padding = { left = 0, right = 1 } },
         },
-        lualine_x = { "location" },
-        lualine_y = {},
-        lualine_z = {},
+        lualine_z = {
+          function()
+            return " " .. os.date("%R")
+          end,
+        },
       },
-      tabline = {},
     })
   end,
 }

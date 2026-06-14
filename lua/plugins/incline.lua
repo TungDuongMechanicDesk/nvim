@@ -1,12 +1,12 @@
 return {
   "b0o/incline.nvim",
   config = function()
-    local colors = require("solarized-osaka.colors").setup({})
+    local colors = require("config.colors").palette
     require("incline").setup({
       highlight = {
         groups = {
-          InclineNormal = { guibg = colors.magenta500, guifg = colors.base04 },
-          InclineNormalNC = { guibg = colors.violet500, guifg = colors.base04 },
+          InclineNormal = { guibg = colors.magenta, guifg = colors.base03 },
+          InclineNormalNC = { guibg = colors.violet, guifg = colors.base03 },
         },
       },
       hide = {

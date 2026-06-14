@@ -5,13 +5,15 @@ return {
 			"williamboman/mason.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			"yioneko/nvim-vtsls",
+			"j-hui/fidget.nvim",
 		},
 		config = function()
+			require("fidget").setup({})
 			require("mason").setup()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
 					"lua-language-server",
-					"solargraph",
+					-- "solargraph",
 					"clangd",
 					"vtsls",
 					"vue-language-server",
@@ -63,17 +65,6 @@ return {
 			vim.lsp.config("lua_ls", lua_config)
 			vim.lsp.enable("lua_ls")
 
-			-- local ruby_config = get_config("ruby_lsp")
-			-- ruby_config.init_options = {
-			-- 	addonSettings = { ["Ruby LSP Rails"] = { enablePendingMigrationsPrompt = false } },
-			-- }
-			-- vim.lsp.config("ruby_lsp", ruby_config)
-			-- vim.lsp.enable("ruby_lsp")
-
-      local solargraph_config = get_config("solargraph")
-      vim.lsp.config("solargraph", solargraph_config)
-      vim.lsp.enable("solargraph")
-
 			local clangd_config = get_config("clangd")
 			vim.lsp.config("clangd", clangd_config)
 			vim.lsp.enable("clangd")
@@ -90,4 +81,3 @@ return {
 		end,
 	},
 }
-
