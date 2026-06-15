@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = colors.blue })
 		vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = colors.cyan })
 
-    vim.api.nvim_set_hl(0, "IblIndent", { fg = colors.base1, nocombine = true })
+    -- vim.api.nvim_set_hl(0, "IblIndent", { fg = colors.base1, nocombine = true })
 
     vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = colors.base1, italic = true })
 	end,
