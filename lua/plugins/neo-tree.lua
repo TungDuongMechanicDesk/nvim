@@ -3,7 +3,7 @@ return {
   branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim",
+   "MunifTanjim/nui.nvim",
   },
   lazy = false,
   config = function()

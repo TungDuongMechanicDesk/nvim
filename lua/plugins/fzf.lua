@@ -1,9 +1,6 @@
 return {
   {
     "ibhagwan/fzf-lua",
-    dependencies = {
-      "tpope/vim-rails",
-    },
     keys = {
       {
         ";f",
@@ -18,18 +15,6 @@ return {
           require("fzf-lua").live_grep()
         end,
         desc = "Live Grep",
-      },
-      {
-        "gf",
-        function()
-          local success, _ = pcall(function()
-            vim.cmd("normal! gf")
-          end)
-          if not success then
-            require("fzf-lua").tags({ search = vim.fn.expand("<cword>") })
-          end
-        end,
-        desc = "Smart Jump (Rails gf / FZF Tags)",
       },
     },
     opts = {

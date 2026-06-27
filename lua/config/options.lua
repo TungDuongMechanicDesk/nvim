@@ -25,12 +25,10 @@ vim.opt.splitbelow = true
 
 vim.opt.scrolloff = 10
 
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
+vim.opt.background = "light"
 
 vim.cmd([[let &t_Cs = '\e[4:3m']])
 vim.cmd([[let &t_Ce = '\e[4:0m']])
-
-vim.g.mapleader = " "

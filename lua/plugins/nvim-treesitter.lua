@@ -3,11 +3,17 @@ return {
   lazy = false,
   build = ":TSUpdate",
   config = function()
-    require("nvim-treesitter").install { "lua", "ruby", "javascript", "markdown" }
+    require("nvim-treesitter").install {
+      "lua", "ruby", "javascript", "markdown", "vue", "pug", "html", "css"
+    }
+
     vim.api.nvim_create_autocmd('FileType', {
-      pattern = { '<filetype>' },
-      callback = function() vim.treesitter.start() end,
+      pattern = { "lua",  "javascript", "markdown", "vue", "pug", "html", "css" },
+      callback = function()
+        vim.treesitter.start()
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end,
     })
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    vim.cmd('autocmd FileType ruby setlocal indentkeys-=.')
   end
 }
