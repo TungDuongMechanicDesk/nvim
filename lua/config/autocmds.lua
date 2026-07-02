@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd("FileType", {
 			},
 			settings = {
 				solargraph = {
-					diagnostics = false,
+					diagnostics = true,
 					completion = true,
 				},
 			},
