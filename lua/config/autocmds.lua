@@ -38,15 +38,12 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Neovim Config
-local colors = require('config.colors').palette
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-	pattern = "*",
-	callback = function()
-		vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = colors.red })
-		vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { undercurl = true, sp = colors.yellow })
-		vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { undercurl = true, sp = colors.blue })
-		vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { undercurl = true, sp = colors.cyan })
-	end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    if vim.fn.has("nvim-0.13") == 1 then
+      vim.hl.hl_op()
+    else
+      (vim.hl or vim.highlight).on_yank()
+    end
+  end,
 })
-

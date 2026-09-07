@@ -18,10 +18,43 @@ return {
 				},
 				presets = {
 					bottom_search = true,
-					command_palette = true,
 					long_message_to_split = true,
 					inc_rename = false,
 					lsp_doc_border = false,
+          command_palette = {
+            views = {
+              cmdline_popup = {
+                position = {
+                  row = "50%",
+                  col = "50%",
+                },
+                size = {
+                  min_width = 60,
+                  width = "auto",
+                  height = "auto",
+                },
+              },
+              popupmenu = {
+                relative = "editor",
+                position = {
+                  row = 23,
+                  col = "50%",
+                },
+                size = {
+                  width = 60,
+                  height = "auto",
+                  max_height = 15,
+                },
+                border = {
+                  style = "rounded",
+                  padding = { 0, 1 },
+                },
+                win_options = {
+                  winhighlight = { Normal = "Normal", FloatBorder = "NoiceCmdlinePopupBorder" },
+                },
+              },
+            },
+          }
 				},
 			})
 		end,
@@ -29,7 +62,7 @@ return {
 	{
 		"rcarriga/nvim-notify",
 		config = function()
-      local colors = require("config.colors").palette
+      local colors = require("solarized-osaka.colors").setup({})
 			require("notify").setup({
 				background_colour = colors.base01,
 				max_width = 50,

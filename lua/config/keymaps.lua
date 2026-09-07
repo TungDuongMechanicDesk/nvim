@@ -22,3 +22,5 @@ vim.keymap.set("n", "<C-w><down>", "<C-w>-")
 vim.keymap.set("n", "ft", ":tabnew ~/algo/template/")
 
 vim.keymap.set("n", "F", vim.diagnostic.open_float)
+
+vim.keymap.set('n', '<leader>tt', ':TestFile<CR>', { noremap = true, silent = true, desc = "Run Test File" })
