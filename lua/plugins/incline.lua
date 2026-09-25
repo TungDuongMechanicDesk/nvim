@@ -7,17 +7,21 @@ return {
       },
       window = {
         margin = { vertical = 0, horizontal = 1 },
+        padding = 0,
       },
       render = function(props)
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
         if filename == "" then
-          filename = "[New file] "
+          filename = "[New file]"
         end
         if vim.bo[props.buf].modified then
-          filename = "[+]" .. filename
+          filename = "[+] " .. filename
         end
         local icon, color = require("nvim-web-devicons").get_icon_color(filename)
-        return { { icon, guifg = color }, { " " }, { filename } }
+        return {
+          { " " .. (icon or "󰈔") .. " ", guifg = color, guibg = "#eee8d5" },
+          { " " .. filename .. " " }
+        }
       end,
     })
   end,

@@ -10,6 +10,8 @@ return {
       variant = "spring",
       on_highlights = function(colors)
         return {
+          FzfLuaHeaderBind         = { fg = colors.cyan, bold = true },
+
           WinSeparator             = { fg = colors.base2, bg = colors.base3 },
           WinSeparatorNC           = { fg = colors.base2, bg = colors.base3 },
           VertSplit                = { fg = colors.base2, bg = colors.base3 },
@@ -19,6 +21,9 @@ return {
           NoiceCmdline             = { bg = colors.base3 },
           NoiceCmdlinePopup        = { bg = colors.base3 },
           NoiceCmdlinePopupBorder  = { bg = colors.base3, fg = colors.cyan },
+          NoiceCmdlineIcon         = { fg = colors.blue, bold = true },
+          NoiceCmdlineIconInput    = { fg = colors.blue, bold = true },
+          NoiceCmdlinePrompt       = { fg = colors.blue, bold = true },
 
           DiagnosticUnderlineError = { undercurl = true, sp = colors.diag_error },
           DiagnosticUnderlineWarn  = { undercurl = true, sp = colors.diag_warning },
