@@ -20,41 +20,7 @@ return {
 					bottom_search = true,
 					long_message_to_split = true,
 					inc_rename = false,
-					lsp_doc_border = false,
-          command_palette = {
-            views = {
-              cmdline_popup = {
-                position = {
-                  row = "50%",
-                  col = "50%",
-                },
-                size = {
-                  min_width = 60,
-                  width = "auto",
-                  height = "auto",
-                },
-              },
-              popupmenu = {
-                relative = "editor",
-                position = {
-                  row = 23,
-                  col = "50%",
-                },
-                size = {
-                  width = 60,
-                  height = "auto",
-                  max_height = 15,
-                },
-                border = {
-                  style = "rounded",
-                  padding = { 0, 1 },
-                },
-                win_options = {
-                  winhighlight = { Normal = "Normal", FloatBorder = "NoiceCmdlinePopupBorder" },
-                },
-              },
-            },
-          }
+					lsp_doc_border = false
 				},
 			})
 		end,
@@ -62,9 +28,9 @@ return {
 	{
 		"rcarriga/nvim-notify",
 		config = function()
-      local colors = require("solarized-osaka.colors").setup({})
+      local colors = require("solarized.utils").get_colors()
 			require("notify").setup({
-				background_colour = colors.base01,
+				background_colour = colors.base3,
 				max_width = 50,
 				render = "wrapped-default",
 				timeout = 1000,

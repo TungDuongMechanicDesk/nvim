@@ -3,28 +3,28 @@ local function augroup(name)
 end
 
 -- Ruby 2.1 Configuration
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("ruby_config"),
-	pattern = "ruby",
-	callback = function()
-		local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-		vim.lsp.start({
-			name = "solargraph",
-			cmd = { "solargraph", "stdio" },
-			capabilities = capabilities,
-			init_options = {
-				maxCompletions = 20,
-			},
-			settings = {
-				solargraph = {
-					diagnostics = true,
-					completion = true,
-				},
-			},
-		})
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = augroup("ruby_config"),
+-- 	pattern = "ruby",
+-- 	callback = function()
+-- 		local capabilities = require("blink.cmp").get_lsp_capabilities()
+--
+-- 		vim.lsp.start({
+-- 			name = "solargraph",
+-- 			cmd = { "solargraph", "stdio" },
+-- 			capabilities = capabilities,
+-- 			init_options = {
+-- 				maxCompletions = 20,
+-- 			},
+-- 			settings = {
+-- 				solargraph = {
+-- 					diagnostics = true,
+-- 					completion = true,
+-- 				},
+-- 			},
+-- 		})
+-- 	end,
+-- })
 
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("ruby_tags"),
@@ -81,5 +81,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "json", "jsonc", "json5" },
   callback = function()
     vim.opt_local.conceallevel = 0
+  end,
+})
+
+-- wrap and check for spell in text filetypes
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("wrap_spell"),
+  pattern = { "text", "plaintex", "typst", "gitcommit", "markdown" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.spell = true
   end,
 })

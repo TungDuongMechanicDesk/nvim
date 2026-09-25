@@ -1,14 +1,7 @@
 return {
   "b0o/incline.nvim",
   config = function()
-    local colors = require("config.colors").palette
     require("incline").setup({
-      highlight = {
-        groups = {
-          InclineNormal = { guibg = colors.green, guifg = colors.base03 },
-          InclineNormalNC = { guibg = colors.violet, guifg = colors.base03 },
-        },
-      },
       hide = {
         cursorline = true,
       },

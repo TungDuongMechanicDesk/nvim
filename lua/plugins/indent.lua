@@ -19,7 +19,7 @@ return {
 					"lazy",
 					"neo-tree",
 					"notify",
-	         "neo-test"
+	        "neo-test"
 				},
 				callback = function()
 					vim.b.miniindentscope_disable = true
