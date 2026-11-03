@@ -39,4 +39,37 @@ return {
 
     vim.cmd.colorscheme("solarized")
   end,
+
+  -- {
+  --   "craftzdog/solarized-osaka.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("solarized-osaka").setup({
+  --       on_highlights = function(hl, colors)
+  --         hl.InclineNormal   = { bg = colors.magenta500, fg = colors.base03 }
+  --         hl.InclineNormalNC = { bg = colors.violet500, fg = colors.base03 }
+  --       end
+  --     })
+  --     vim.cmd [[colorscheme solarized-osaka]]
+  --   end
+  -- }
+  -- {
+  -- "ellisonleao/gruvbox.nvim",
+  -- priority = 1000,
+  -- config = function()
+  --   require("gruvbox").setup({
+  --   })
+  --   vim.cmd([[colorscheme gruvbox]])
+  -- end
+  -- }
+  -- {
+  --   "catppuccin/nvim", name = "catppuccin", priority = 1000,
+  --   config = function()
+  --     require("catppuccin").setup({
+  --       auto_integrations = true,
+  --     })
+  --     vim.cmd.colorscheme "catppuccin-mocha"
+  --   end
+  -- }
 }

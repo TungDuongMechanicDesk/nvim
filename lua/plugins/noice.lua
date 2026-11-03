@@ -28,9 +28,7 @@ return {
 	{
 		"rcarriga/nvim-notify",
 		config = function()
-      local colors = require("solarized.utils").get_colors()
 			require("notify").setup({
-				background_colour = colors.base3,
 				max_width = 50,
 				render = "wrapped-default",
 				timeout = 1000,
